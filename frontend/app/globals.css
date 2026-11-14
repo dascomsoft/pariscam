@@ -1,73 +1,128 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+/* ========================================
+   PARISCAM — GLOBAL STYLES
+   Police : Nunito
+   Palette : Bleu / Vert / Jaune
+======================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-nunito), sans-serif;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #0f172a;
+    font-family: var(--font-nunito);
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ::selection {
+    background-color: #d1fae5;
+    color: #071b36;
+  }
 }
 
-body {
-  background-color: #FFFFFF;
-  color: #0F172A;
-  font-family: var(--font-inter), system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-feature-settings: "ss01", "cv01";
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #94a3b8 #f1f5f9;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #159b62;
+  }
 }
 
-::selection {
-  background-color: #DBEAFE;
-  color: #1E3A5F;
+/* ========================================
+   CONTAINER PARISCAM
+======================================== */
+
+@layer components {
+  .container-pariscam {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-pariscam {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Dégradé texte PARISCAM */
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      #2563eb 0%,
+      #159b62 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #F8FAFC;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #3B82F6;
-}
+/* ========================================
+   ACCESSIBILITÉ
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
   }
-}
 
-a {
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-.container-pariscam {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .container-pariscam {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
-}
-
-/* Dégradé texte premium */
-.text-gradient {
-  background: linear-gradient(135deg, #3B82F6 0%, #34D399 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }

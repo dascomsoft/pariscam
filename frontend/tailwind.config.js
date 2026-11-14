@@ -32,7 +32,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+       sans: ["var(--font-nunito)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         soft: "0 2px 15px rgba(59, 130, 246, 0.06)",
