@@ -134,16 +134,7 @@ export default function Navbar() {
 
           {/* ACTIONS DESKTOP */}
           <div className="hidden items-center gap-4 lg:flex">
-            <a
-              href={`tel:+${COMPANY.whatsapp}`}
-              className="group flex items-center gap-2 text-sm font-bold text-[#071B36] transition-colors hover:text-[#159B62]"
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600 transition-colors group-hover:bg-emerald-50 group-hover:text-[#159B62]">
-                <Phone size={17} />
-              </span>
-
-              <span>Nous appeler</span>
-            </a>
+            
 
             <Button
               href="/contact"
